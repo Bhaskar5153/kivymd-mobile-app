@@ -1,0 +1,161 @@
+Window_manager:
+    First_screen:
+
+    Second_screen:
+
+
+<First_screen>:
+    name: "first_screen"
+    MDScreen:
+        MDToolbar:
+            title: "TYPS"
+            pos_hint: {"x": 0, "y": 0.9}
+
+        MDFloatLayout:
+
+            MDTextField:
+                id: user_name
+                icon_left: "face"
+                hint_text: "User Name"
+                pos_hint: {"x": 0.03, "y": 0.7}
+                color_mode: "custom"
+                line_color_focus: 0, 0, 0, 1
+                font_style: "calibri" 
+                
+
+
+            MDTextField:
+                id: pw
+                hint_text: "Password"
+                pos_hint: {"x": 0.03, "y": 0.6} 
+                color_mode: "custom"
+                line_color_focus: 0, 0, 0, 1   
+
+            MDRaisedButton:
+                text: "Login"
+                pos_hint: {"x": 0.05, "y": 0.5}
+                size_hint: (0.9, 0.05)
+                on_press: app.root.current = "second_screen"
+
+
+
+<Second_screen>:
+    name: "second_screen"
+    MDScreen:
+        MDToolbar:
+            title: "TYPS"
+            pos_hint: {"x": 0, "y": 0.9}
+
+        MDFloatLayout:
+
+            MDTextField:
+                id: customer_name
+                icon_left: "face"
+                hint_text: "Customer Name"
+                pos_hint: {"x": 0.03, "y": 0.75}
+                color_mode: "custom"
+                line_color_focus: 0, 0, 0, 0.5
+
+
+            MDTextField:
+                id: ph
+                hint_text: "Phone Number"
+                pos_hint: {"x": 0.03, "y": 0.65}
+                color_mode: "custom"
+                line_color_focus: 0, 0, 0, 1
+
+
+
+            MDTextField:
+                id: address
+                hint_text: "Address"
+                pos_hint: {"x": 0.03, "y": 0.55}
+                color_mode: "custom"
+                line_color_focus: 0, 0, 0, 1
+
+
+            
+            MDTextField:
+                id: products
+                hint_text: "Product Type"
+                pos_hint: {"x": 0.03, "y": 0.45}
+                on_focus: if self.focus: root.manager.get_screen('second_screen').menu.open()
+                color_mode: "custom"
+                line_color_focus: 0, 0, 0, 1
+
+
+            MDTextField:
+                id: Qty
+                hint_text: "Quantity"
+                pos_hint: {"x": 0.03, "y": 0.35}
+                color_mode: "custom"
+                line_color_focus: 0, 0, 0, 1
+
+            
+            MDTextField:
+                id: price_id
+                hint_text: "Price"
+                pos_hint: {"x": 0.03, "y": 0.25}
+                color_mode: "custom"
+                line_color_focus: 0, 0, 0, 1
+                
+
+
+            MDTextField:
+                id: date
+                hint_text: "date"
+                pos_hint: {"x": 0.03, "y": 0.15}
+                on_focus: if self.focus: root.manager.get_screen('second_screen').pick_date()
+                color_mode: "custom"
+                line_color_focus: 0, 0, 0, 1
+
+            MDRaisedButton:
+                text: "Total_bill"
+                pos_hint: {"x": 0.03, "y": 0.05}
+                size_hint: (0.5, 0.1)
+                on_press: root.manager.get_screen('second_screen').bill(bill_id.text, price_id.text, Qty.text)
+                
+
+
+            MDTextField:
+                id: bill_id
+                pos_hint: {"x": 0.6, "y": 0.02}
+                size_hint: (0.5, 0.1)
+                line_color_normal: app.theme_cls.accent_color
+                color_mode: "custom"
+                line_color_focus: 0, 0, 0, 1
+
+                
+                
+
+                
+                
+
+
+
+
+                
+
+            
+
+
+            
+
+            
+
+
+            
+
+
+
+        
+
+
+
+
+
+        
+
+        
+
+
